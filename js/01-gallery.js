@@ -3,12 +3,12 @@ import { galleryItems } from './gallery-items.js';
 
 console.log(galleryItems);
  
-const galleryRef = document.querySelector('.gallary');
+const galleryRef = document.querySelector('.gallery');
 
-const markup = galleryRef.map((item) => 
-`<div class="gallery__item">
-    <a class="gallery__link" href="${item.original}">
-     <img
+const markup = galleryItems.map((item) =>
+ `<div class="gallery__item">
+  <a class="gallery__link" href="${item.original}">
+    <img
       class="gallery__image"
       src='${item.preview}'
       data-source='${item.original}'
@@ -17,5 +17,6 @@ const markup = galleryRef.map((item) =>
   </a>
 </div>`).join('');
 
-galleryRef.innerHTML = markup
+galleryRef.innerHTML = markup;
+
 
