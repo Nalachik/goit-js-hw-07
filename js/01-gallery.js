@@ -19,4 +19,30 @@ const markup = galleryItems.map((item) =>
 
 galleryRef.innerHTML = markup;
 
+galleryRef.addEventListener('click', OpenModal);
 
+let picture = '';
+
+function createModal(event) {
+	picture = basicLightbox.create(`
+    <img src=${event.target.dataset.source}>`);
+}
+
+
+function OpenModal(event) {
+	event.preventDefault();
+window.addEventListener('keydown', EscCloseModal);
+
+createModal(event);
+picture.show()
+}
+
+
+function EscCloseModal(event) {
+	event.preventDefault();
+	window.removeEventListener('keydown', EscCloseModal);
+
+	if(event.code === 'Escape'){
+    image.close()
+	}
+}
