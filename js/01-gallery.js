@@ -43,6 +43,6 @@ function EscCloseModal(event) {
 	window.removeEventListener('keydown', EscCloseModal);
 
 	if(event.code === 'Escape'){
-    image.close()
+    picture.close()
 	}
 }
