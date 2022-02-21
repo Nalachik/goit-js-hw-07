@@ -30,7 +30,10 @@ function createModal(event) {
 
 
 function OpenModal(event) {
-	event.preventDefault();
+   if (event.target.nodeName !== "IMG") {
+    return;
+  }
+event.preventDefault();
 window.addEventListener('keydown', EscCloseModal);
 
 createModal(event);
